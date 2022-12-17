@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import Mainbar from './Mainbar';
+// import Navbar from './components/vivekComponents/Navbar.js'
+import Card from './components/Card';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Vivek from './components/vivekComponents/Vivek';
+import Abdul from './components/abdulComponents/Abdul';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <Mainbar />
+        <Switch>
+          <Route path="/vivek">
+            <Vivek/>
+          </Route> 
+          <Route path = "/abdul">
+            <Abdul/>
+          </Route>
+          <Route path = "/vansh">
+            <Card />
+          </Route>
+          <Route path = "/aadil">
+            <Form />
+          </Route>
+        </Switch>
+      </>
+    </Router>
   );
 }
 
